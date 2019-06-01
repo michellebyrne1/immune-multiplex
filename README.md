@@ -5,9 +5,9 @@ The immunoassay and multiplex assay technology used to measure immune markers in
 
 WHICH FILE SHOULD I USE?
 
--> Use the R Markdown file in R Studio if you wish to simulate your own data (or use your own data) and run the analyses yourself.
+-> Use the R Markdown file in R Studio if you wish to use your own data and run the analyses yourself. The first half of the script also includes code to synthesise your dataset in case you wish to share it without sharing the original data.
 
--> The PDF document is a version of the R Markdown code that has been run on simulated data, with output (including correlation plots and graphs to visualize data distribution) underneath each code chunk. View this document if you are less familiar with R code.
+-> The PDF document is a version of the R Markdown code that has been run on simulated data (from a dataset of salivary immune markers collected from adolescents), with output (including correlation plots and graphs to visualize data distribution) underneath each code chunk. View this document if you are less familiar with R code.
 
 -> Soon we will have a Shiny app available so readers can use a GUI to run different sections of the code in order to more easily and quickly visualize the differences in distributions and correlations when data has been cleaned and treated in different ways.
 
