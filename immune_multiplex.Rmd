@@ -2,7 +2,9 @@
 title: "Case study of mutliplex salivary immune data"
 author: "Michelle Byrne - michelle.byrne@gmail.com"
 date: "June 1, 2019"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
