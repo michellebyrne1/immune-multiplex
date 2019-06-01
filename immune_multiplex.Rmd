@@ -1,7 +1,7 @@
 ---
-title: "Play with mutliplex salivary immune data!"
+title: "Case study of mutliplex salivary immune data"
 author: "Michelle Byrne - michelle.byrne@gmail.com"
-date: "July 23, 2018"
+date: "June 1, 2019"
 output: html_document
 ---
 
@@ -9,14 +9,14 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
-### This script includes code for you to synthesise your own multiplex data if you want to play around with it and then share with others.
+### This script includes code for you to synthesise your own multiplex data from your original dataset if you wish to later share it with others without actually sharing your original dataset.
 ### Or, you can use our own synthesized dataset and jump straight to exploring correlations, distributions, etc.
-### It is a companion to the book chapter by Riis, et al. [ more details here ]
+### It is a companion to the book chapter by Riis, et al. 
 
  
 * This code assumes you start with *.csv data in wide fomat (i.e., one row per subject, with multiple analytes, each in their own column).  
-* Also, it assumes you do not have any completely missing (i.e., no sample collected) data, other than values that were determined by the assay to be out of range (OOR). If you do have missing samples, for the purposes of this exercise only, I recommend running a single (EM) imputation. In reality, you would want to check your missing data mechanism and then address missingness using an appropriate method (see the accompanying Chapter X in [name of book]).
-* The steps for cleaning the data in this code are for exploratory purposes only in order to see how different cleaning steps affect the data. See above Chapter [X] for a review of the issues of data cleaning. If you wish to see examples of protocols that include various ways of cleaning this data, such as winsorization, correcting for flow rate, etc., I have code available [insert github link here].
+* Also, it assumes you do not have any completely missing (i.e., no sample collected) data, other than values that were determined by the assay to be out of range (OOR). If you do have missing samples, for the purposes of this exercise only, I recommend running a single (EM) imputation. In reality, you would want to check your missing data mechanism and then address missingness using an appropriate method.
+* The steps for cleaning the data in this code are for exploratory purposes only in order to see how different cleaning steps affect the data. 
 
 
 Import the raw data
@@ -193,7 +193,7 @@ depechemode_3$Sal_IFNa2 <- as.numeric(depechemode_3$Sal_IFNa2)
 
 
 
-## Synthesise!
+## Synthesise
 Synthpop synthesises the original dataset (depechemode) and creates a list (kraftwerk), which includes the synthesised dataset (neworder).
 I've set the seed so I can replicate everything exactly each time I run this (you can't because you don't have the original data), but if you use this with your own data, and you want a new dataset every time, remove the my.seed stuff. Also, if you are using your own data, make sure to change the OOR values first, as above.
 ```{r synth}
@@ -213,7 +213,7 @@ neworder_3 <- kraftwerk_3$syn
 # Transforming immune variables
 * Normally we would check the skew and kurtosis, and visually inspect the data as we do later, BEFORE transforming anything. See [ github link coming soon ] for code on exploring and reporting this. For example, you may not need to transform anything if it is not skewed, or if your immune markers are not the outcome (dependent) variables. Other types of transformations, such as square root, may be more appropriate than log transformation.
 * In this example, we'll just go ahead and transform everything so we can see how it changes correlations and distributions.
-* Also, another thing we are NOT doing here is correcting for flow rate. Some markers (like SIgA) require this - see [ github link coming soon ] for code.
+* Also, another thing we are NOT doing here is correcting for flow rate. Some markers (like SIgA) require this.
 
 
 ```{r transform}
@@ -589,9 +589,3 @@ units_age
 units_imm
 
 ```
-
-
-Do you have salivary immune data? Do you want to contribute to this project? Do you like violin plots as much as I do (trick question, no one likes them, they only love them)?
-* First, fork this code to your own github - then make the changes you wish to see in your life/code, and run it. You can either use my synthesised dataset (for reproducibility) [link to download neworder coming soon] or take your own real data (for replicability). 
-* Remember to synthesise, not upload your own real data unless your research participants have explicitly given permission to share it. And, the data should always be deidentified. Also, make sure there are no other identifying variables like date of birth - instead, use age if you want to explore those correlations. 
-* Then - upload your results to the connected OSF Project [ more detailed instructions coming soon...]
